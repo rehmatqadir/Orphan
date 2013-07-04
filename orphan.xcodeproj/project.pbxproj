@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD4328401781051900D13992 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD43283F1781051900D13992 /* UIKit.framework */; };
+		DD4328421781051900D13992 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328411781051900D13992 /* Foundation.framework */; };
+		DD4328441781051900D13992 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328431781051900D13992 /* CoreGraphics.framework */; };
+		DD43284A1781051900D13992 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD4328481781051900D13992 /* InfoPlist.strings */; };
+		DD43284C1781051900D13992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD43284B1781051900D13992 /* main.m */; };
+		DD4328501781051900D13992 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD43284F1781051900D13992 /* AppDelegate.m */; };
+		DD4328521781051900D13992 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4328511781051900D13992 /* Default.png */; };
+		DD4328541781051900D13992 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4328531781051900D13992 /* Default@2x.png */; };
+		DD4328561781051900D13992 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4328551781051900D13992 /* Default-568h@2x.png */; };
+		DD4328591781051900D13992 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4328571781051900D13992 /* MainStoryboard.storyboard */; };
+		DD43285C1781051900D13992 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD43285B1781051900D13992 /* ViewController.m */; };
+		DD4328631781053F00D13992 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328621781053F00D13992 /* QuartzCore.framework */; };
+		DD4328651781055100D13992 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328641781055000D13992 /* CoreLocation.framework */; };
+		DD4328671781055600D13992 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328661781055600D13992 /* MapKit.framework */; };
+		DD4328691781057300D13992 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328681781057300D13992 /* Twitter.framework */; };
+		DD43286B1781057C00D13992 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD43286A1781057C00D13992 /* Social.framework */; };
+		DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD43286C1781094700D13992 /* Love-heart-arrow.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DD43283C1781051900D13992 /* orphan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = orphan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD43283F1781051900D13992 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DD4328411781051900D13992 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DD4328431781051900D13992 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DD4328471781051900D13992 /* orphan-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "orphan-Info.plist"; sourceTree = "<group>"; };
+		DD4328491781051900D13992 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD43284B1781051900D13992 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DD43284D1781051900D13992 /* orphan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "orphan-Prefix.pch"; sourceTree = "<group>"; };
+		DD43284E1781051900D13992 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DD43284F1781051900D13992 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DD4328511781051900D13992 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DD4328531781051900D13992 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DD4328551781051900D13992 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DD4328581781051900D13992 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DD43285A1781051900D13992 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DD43285B1781051900D13992 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DD4328621781053F00D13992 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD4328641781055000D13992 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DD4328661781055600D13992 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DD4328681781057300D13992 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		DD43286A1781057C00D13992 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DD43286C1781094700D13992 /* Love-heart-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-heart-arrow.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD4328391781051900D13992 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD43286B1781057C00D13992 /* Social.framework in Frameworks */,
+				DD4328691781057300D13992 /* Twitter.framework in Frameworks */,
+				DD4328671781055600D13992 /* MapKit.framework in Frameworks */,
+				DD4328651781055100D13992 /* CoreLocation.framework in Frameworks */,
+				DD4328631781053F00D13992 /* QuartzCore.framework in Frameworks */,
+				DD4328401781051900D13992 /* UIKit.framework in Frameworks */,
+				DD4328421781051900D13992 /* Foundation.framework in Frameworks */,
+				DD4328441781051900D13992 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD4328331781051900D13992 = {
+			isa = PBXGroup;
+			children = (
+				DD43286A1781057C00D13992 /* Social.framework */,
+				DD4328681781057300D13992 /* Twitter.framework */,
+				DD4328661781055600D13992 /* MapKit.framework */,
+				DD4328641781055000D13992 /* CoreLocation.framework */,
+				DD4328621781053F00D13992 /* QuartzCore.framework */,
+				DD4328451781051900D13992 /* orphan */,
+				DD43283E1781051900D13992 /* Frameworks */,
+				DD43283D1781051900D13992 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD43283D1781051900D13992 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD43283C1781051900D13992 /* orphan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD43283E1781051900D13992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD43283F1781051900D13992 /* UIKit.framework */,
+				DD4328411781051900D13992 /* Foundation.framework */,
+				DD4328431781051900D13992 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD4328451781051900D13992 /* orphan */ = {
+			isa = PBXGroup;
+			children = (
+				DD43284E1781051900D13992 /* AppDelegate.h */,
+				DD43284F1781051900D13992 /* AppDelegate.m */,
+				DD4328571781051900D13992 /* MainStoryboard.storyboard */,
+				DD43286C1781094700D13992 /* Love-heart-arrow.png */,
+				DD43285A1781051900D13992 /* ViewController.h */,
+				DD43285B1781051900D13992 /* ViewController.m */,
+				DD4328461781051900D13992 /* Supporting Files */,
+			);
+			path = orphan;
+			sourceTree = "<group>";
+		};
+		DD4328461781051900D13992 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD4328471781051900D13992 /* orphan-Info.plist */,
+				DD4328481781051900D13992 /* InfoPlist.strings */,
+				DD43284B1781051900D13992 /* main.m */,
+				DD43284D1781051900D13992 /* orphan-Prefix.pch */,
+				DD4328511781051900D13992 /* Default.png */,
+				DD4328531781051900D13992 /* Default@2x.png */,
+				DD4328551781051900D13992 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD43283B1781051900D13992 /* orphan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD43285F1781051900D13992 /* Build configuration list for PBXNativeTarget "orphan" */;
+			buildPhases = (
+				DD4328381781051900D13992 /* Sources */,
+				DD4328391781051900D13992 /* Frameworks */,
+				DD43283A1781051900D13992 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = orphan;
+			productName = orphan;
+			productReference = DD43283C1781051900D13992 /* orphan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD4328341781051900D13992 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = MasterRyuX;
+			};
+			buildConfigurationList = DD4328371781051900D13992 /* Build configuration list for PBXProject "orphan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DD4328331781051900D13992;
+			productRefGroup = DD43283D1781051900D13992 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD43283B1781051900D13992 /* orphan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD43283A1781051900D13992 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD43284A1781051900D13992 /* InfoPlist.strings in Resources */,
+				DD4328521781051900D13992 /* Default.png in Resources */,
+				DD4328541781051900D13992 /* Default@2x.png in Resources */,
+				DD4328561781051900D13992 /* Default-568h@2x.png in Resources */,
+				DD4328591781051900D13992 /* MainStoryboard.storyboard in Resources */,
+				DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD4328381781051900D13992 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD43284C1781051900D13992 /* main.m in Sources */,
+				DD4328501781051900D13992 /* AppDelegate.m in Sources */,
+				DD43285C1781051900D13992 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DD4328481781051900D13992 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD4328491781051900D13992 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DD4328571781051900D13992 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD4328581781051900D13992 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD43285D1781051900D13992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DD43285E1781051900D13992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD4328601781051900D13992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "orphan/orphan-Prefix.pch";
+				INFOPLIST_FILE = "orphan/orphan-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DD4328611781051900D13992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "orphan/orphan-Prefix.pch";
+				INFOPLIST_FILE = "orphan/orphan-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD4328371781051900D13992 /* Build configuration list for PBXProject "orphan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD43285D1781051900D13992 /* Debug */,
+				DD43285E1781051900D13992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD43285F1781051900D13992 /* Build configuration list for PBXNativeTarget "orphan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD4328601781051900D13992 /* Debug */,
+				DD4328611781051900D13992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD4328341781051900D13992 /* Project object */;
+}
