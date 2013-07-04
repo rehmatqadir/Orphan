@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 MasterRyuX. All rights reserved.
 //
 
+//location logic on appdelegate//
+
+
 #import "AppDelegate.h"
 
 
@@ -15,6 +18,8 @@
 
 
 //parse variables
+    
+    
 NSMutableDictionary *listVenue;
 NSDictionary *categoryDictionary;
 NSMutableArray *categoryArray;

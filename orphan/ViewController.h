@@ -4,7 +4,8 @@
 //
 //  Created by MasterRyuX on 6/30/13.
 //  Copyright (c) 2013 MasterRyuX. All rights reserved.
-//
+//location logic on vc//
+//artwork on storyboard//
 
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
