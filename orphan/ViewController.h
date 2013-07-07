@@ -13,10 +13,16 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 
 
 @interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *heartSpinner;
+@property (strong, nonatomic) NSString * theDistance;
+@property (strong, nonatomic) CLLocation *currentLoc;
+@property (nonatomic, strong) NSString * strLatitude;
+@property (nonatomic, strong) NSString * strLongitude;
+@property (nonatomic) BOOL headingDidStartUpdating;
 
 @end
 

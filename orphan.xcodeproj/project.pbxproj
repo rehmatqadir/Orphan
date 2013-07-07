@@ -24,6 +24,7 @@
 		DD4328691781057300D13992 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328681781057300D13992 /* Twitter.framework */; };
 		DD43286B1781057C00D13992 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD43286A1781057C00D13992 /* Social.framework */; };
 		DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD43286C1781094700D13992 /* Love-heart-arrow.png */; };
+		DDF5B4D21788B29500EE6352 /* MateLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5B4D11788B29500EE6352 /* MateLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		DD4328681781057300D13992 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		DD43286A1781057C00D13992 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DD43286C1781094700D13992 /* Love-heart-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-heart-arrow.png"; sourceTree = "<group>"; };
+		DDF5B4D01788B29500EE6352 /* MateLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MateLocation.h; sourceTree = "<group>"; };
+		DDF5B4D11788B29500EE6352 /* MateLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MateLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				DD43286C1781094700D13992 /* Love-heart-arrow.png */,
 				DD43285A1781051900D13992 /* ViewController.h */,
 				DD43285B1781051900D13992 /* ViewController.m */,
+				DDF5B4D01788B29500EE6352 /* MateLocation.h */,
+				DDF5B4D11788B29500EE6352 /* MateLocation.m */,
 				DD4328461781051900D13992 /* Supporting Files */,
 			);
 			path = orphan;
@@ -200,6 +205,7 @@
 				DD43284C1781051900D13992 /* main.m in Sources */,
 				DD4328501781051900D13992 /* AppDelegate.m in Sources */,
 				DD43285C1781051900D13992 /* ViewController.m in Sources */,
+				DDF5B4D21788B29500EE6352 /* MateLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +328,7 @@
 				DD4328611781051900D13992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
