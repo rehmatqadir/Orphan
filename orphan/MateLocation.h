@@ -20,9 +20,9 @@
 @property (strong, nonatomic) NSString  *title;
 @property (strong, nonatomic) UIImage *BigPic;
 @property (strong, nonatomic) NSData *Icon;
-@property (strong, nonatomic) float latestBearing;
+@property float latestBearing;
 
-@property (strong, nonatomic) CLLocationCoordinate2D *coordinate;
+@property CLLocationCoordinate2D *coordinate;
 
 
 

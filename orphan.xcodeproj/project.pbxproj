@@ -25,6 +25,7 @@
 		DD43286B1781057C00D13992 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD43286A1781057C00D13992 /* Social.framework */; };
 		DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD43286C1781094700D13992 /* Love-heart-arrow.png */; };
 		DDF5B4D21788B29500EE6352 /* MateLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5B4D11788B29500EE6352 /* MateLocation.m */; };
+		DDF7F3E217B72FBD007541D6 /* archery.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF7F3E117B72FBD007541D6 /* archery.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DD43286C1781094700D13992 /* Love-heart-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-heart-arrow.png"; sourceTree = "<group>"; };
 		DDF5B4D01788B29500EE6352 /* MateLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MateLocation.h; sourceTree = "<group>"; };
 		DDF5B4D11788B29500EE6352 /* MateLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MateLocation.m; sourceTree = "<group>"; };
+		DDF7F3E117B72FBD007541D6 /* archery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = archery.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		DD4328331781051900D13992 = {
 			isa = PBXGroup;
 			children = (
+				DDF7F3E117B72FBD007541D6 /* archery.png */,
 				DD43286A1781057C00D13992 /* Social.framework */,
 				DD4328681781057300D13992 /* Twitter.framework */,
 				DD4328661781055600D13992 /* MapKit.framework */,
@@ -192,6 +195,7 @@
 				DD4328561781051900D13992 /* Default-568h@2x.png in Resources */,
 				DD4328591781051900D13992 /* MainStoryboard.storyboard in Resources */,
 				DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */,
+				DDF7F3E217B72FBD007541D6 /* archery.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

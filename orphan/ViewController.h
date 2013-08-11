@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
 @property (nonatomic) BOOL headingDidStartUpdating;
+@property (strong, nonatomic) IBOutlet UIButton *updateMyLocation;
 
 @end
 
