@@ -20,11 +20,9 @@
 //parse variables
     
     
-NSMutableDictionary *listVenue;
+NSMutableDictionary *listDictionary;
 NSDictionary *categoryDictionary;
 NSMutableArray *categoryArray;
-NSMutableDictionary *categoryInfo;
-NSMutableDictionary * checkinStats;
 NSMutableArray *arrayWithDistance;
 BOOL didRunFourSquareParse;
 }

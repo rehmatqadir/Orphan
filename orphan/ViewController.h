@@ -14,6 +14,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
+#import "MateLocation.h"
 
 
 @interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>

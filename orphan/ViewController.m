@@ -60,13 +60,11 @@
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    // If it's a relatively recent event, turn off updates to save power
+   
     CLLocation* startLocation = [locations lastObject];
-    //    NSDate* eventDate = startLocation.timestamp;
-    //    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    //    if (abs(howRecent) < 15.0) {
+
     if (startLocation.coordinate.latitude == 0 && startLocation.coordinate.longitude == 0) {
-        // NSLog(@"Location is 0,0.");
+        
         return;
     }
     
@@ -76,8 +74,8 @@
     self.strLongitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.longitude];
     
     
-    thisDistVenueLat = [appDelegate.closestVenue.venueLatitude floatValue];
-    thisDistVenueLong = [appDelegate.closestVenue.venueLongitude floatValue];
+    thisDistVenueLat = [appDelegate.mateLatestLocation.Latitude floatValue];
+    thisDistVenueLong = [appDelegate.mateLatestLocation.Longitude floatValue];
     //  give latitude2,lang of destination   and latitude,longitude of first place.
     
     //this function return distance in kilometer.
@@ -319,10 +317,10 @@
     
     
     // NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
-    VenueObject * thisNearPlace = [[VenueObject alloc] init];
+    MateLocation * mateLocation = [[MateLocation alloc] init];
     //    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
-    thisNearPlace = appDelegate.closestVenue;
+    mateLocation = appDelegate.latestMateLocation;
     
     
     NSString *nearPlaceName = thisNearPlace.title;
