@@ -27,9 +27,14 @@
     float thisVenueLong;
     float thisDistVenueLat;
     float thisDistVenueLong;
+    SLComposeViewController *slComposeViewController;
+    UIActivityViewController *uiActivityViewController;
     
     
 }
+
+#define degreesToRadians(x) (M_PI * x / 180.0)
+#define radiandsToDegrees(x) (x * 180.0 / M_PI)
 
 - (void)viewDidLoad
 {
@@ -294,8 +299,8 @@
         self.headingDidStartUpdating = YES;
     }
     
-    thisVenueLat = [appDelegate.closestVenue.venueLatitude floatValue];
-    thisVenueLong = [appDelegate.closestVenue.venueLongitude floatValue];
+    thisVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
+    thisVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
     
     float radcurrentLat = degreesToRadians(ourPhoneFloatLat);
     float radcurrentLong = degreesToRadians(ourPhoneFloatLong);
@@ -357,8 +362,8 @@
     
     [self.heartSpinner.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.heartSpinner.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    if (![self connected]) {
-        self.theDistanceLabel.text = @"No Signal";
+   // if (![self connected]) {
+     //   self.theDistanceLabel.text = @"No Signal";
         //self.closeSushiLabel.text = @":(";
         //        self.saiImage.alpha = 0;
         //        self.sadSushiImage.alpha = 1;
@@ -379,7 +384,20 @@
     //
     //NSLog(@"true heading is %f", newHeading.trueHeading);
     
-}
+//}
+
+-(IBAction)updateMyLocation:(id)sender{
+            NSString *someText = [NSString stringWithFormat:@"%@, %@", self.strLatitude, self.strLongitude];
+        NSArray *dataToShare = @[someText] ;
+        
+        uiActivityViewController = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+        uiActivityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeMail, UIActivityTypeMessage, UIActivityTypeCopyToPasteboard,UIActivityTypePostToWeibo, UIActivityTypeAssignToContact];
+        [self presentViewController:uiActivityViewController animated:YES completion:^{
+            //stuff
+        }];
+    }
+
+
 
 - (void)didReceiveMemoryWarning
 {

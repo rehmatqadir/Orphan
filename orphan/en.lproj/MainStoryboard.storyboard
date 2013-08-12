@@ -41,6 +41,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateMyLocation:" destination="2" eventType="touchUpInside" id="bUR-5p-giO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -48,7 +51,6 @@
                     <connections>
                         <outlet property="heartSpinner" destination="j3l-xe-QZj" id="CCd-89-CmK"/>
                         <outlet property="theDistanceLabel" destination="IXU-4I-cmF" id="jRn-7d-tR8"/>
-                        <outlet property="updateMyLocation" destination="pF7-Wb-efl" id="2He-Rd-yem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -63,6 +65,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="updateMyLocation:"/>
                 <relationship kind="outlet" name="heartSpinner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="updateMyLocation" candidateClass="UIButton"/>
