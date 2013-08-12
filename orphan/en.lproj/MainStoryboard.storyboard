@@ -47,6 +47,7 @@
                     </view>
                     <connections>
                         <outlet property="heartSpinner" destination="j3l-xe-QZj" id="CCd-89-CmK"/>
+                        <outlet property="theDistanceLabel" destination="IXU-4I-cmF" id="jRn-7d-tR8"/>
                         <outlet property="updateMyLocation" destination="pF7-Wb-efl" id="2He-Rd-yem"/>
                     </connections>
                 </viewController>
@@ -63,6 +64,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="heartSpinner" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="updateMyLocation" candidateClass="UIButton"/>
             </relationships>
         </class>

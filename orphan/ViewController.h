@@ -19,6 +19,7 @@
 
 @interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *heartSpinner;
+@property (strong, nonatomic) IBOutlet UILabel *theDistanceLabel;
 @property (strong, nonatomic) NSString * theDistance;
 @property (strong, nonatomic) CLLocation *currentLoc;
 @property (nonatomic, strong) NSString * strLatitude;

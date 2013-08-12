@@ -23,7 +23,11 @@
     float ourPhoneFloatLong;
     NSMutableArray * allItems1;
     AppDelegate *appDelegate;
-    BOOL activityIndicatorStopped;
+    float thisVenueLat;
+    float thisVenueLong;
+    float thisDistVenueLat;
+    float thisDistVenueLong;
+    
     
 }
 
@@ -74,8 +78,8 @@
     self.strLongitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.longitude];
     
     
-    thisDistVenueLat = [appDelegate.mateLatestLocation.Latitude floatValue];
-    thisDistVenueLong = [appDelegate.mateLatestLocation.Longitude floatValue];
+    thisDistVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
+    thisDistVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
     //  give latitude2,lang of destination   and latitude,longitude of first place.
     
     //this function return distance in kilometer.
@@ -317,14 +321,14 @@
     
     
     // NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
-    MateLocation * mateLocation = [[MateLocation alloc] init];
+    MateLocation * mateLocation1 = [[MateLocation alloc] init];
     //    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
-    mateLocation = appDelegate.latestMateLocation;
+    mateLocation1 = appDelegate.mateLocation;
     
     
-    NSString *nearPlaceName = thisNearPlace.title;
-    self.closeSushiLabel.text = nearPlaceName;
+    //NSString *nearPlaceName = thisNearPlace.title;
+    //self.closeSushiLabel.text = nearPlaceName;
     
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
     // float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
@@ -348,14 +352,14 @@
     //theAnimation.fromValue = [NSNumber numberWithFloat:0];
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
     theAnimation.duration = .8f;
-    self.closeSushiLabel.text = nearPlaceName;
+    //self.closeSushiLabel.text = nearPlaceName;
     self.theDistanceLabel.text = self.theDistance;
     
-    [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
-    self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
+    [self.heartSpinner.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
+    self.heartSpinner.transform = CGAffineTransformMakeRotation(radAngleCalc);
     if (![self connected]) {
         self.theDistanceLabel.text = @"No Signal";
-        self.closeSushiLabel.text = @":(";
+        //self.closeSushiLabel.text = @":(";
         //        self.saiImage.alpha = 0;
         //        self.sadSushiImage.alpha = 1;
     }

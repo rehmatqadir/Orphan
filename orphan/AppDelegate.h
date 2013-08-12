@@ -13,17 +13,22 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
-
+{
+    NSArray *distanceSortedArray;
+    float startingUserLocationFloatLat;
+    float startingUserLocationFloatLong;
+    NSString *latitudeWithCurrentCoordinates;
+    NSString *longitudeWithCurrentCoordinates;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
 @property (nonatomic, strong) CLLocationManager *ourLocationManager;
+@property (nonatomic, strong) MateLocation * mateLocation;
+//@property (nonatomic, strong)
+
+
 
 
 @end
-NSArray *distanceSortedArray;
-float startingUserLocationFloatLat;
-float startingUserLocationFloatLong;
-NSString *latitudeWithCurrentCoordinates;
-NSString *longitudeWithCurrentCoordinates;
