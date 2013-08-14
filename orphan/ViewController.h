@@ -26,7 +26,7 @@
 @property (nonatomic, strong) NSString * strLongitude;
 @property (nonatomic) BOOL headingDidStartUpdating;
 - (IBAction)updateMyLocation:(id)sender;
-
+- (id)reverseTransformedValue:(id)value;
 
 @end
 

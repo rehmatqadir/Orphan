@@ -128,153 +128,7 @@
     //   distLabel = [NSString stringWithFormat: @"Less than 100 feet, you're here, look up."];
     
     // }
-    else if (distBetweenStartandVenueFeet > 2640 && distBetweenStartandVenueFeet < 3168){
-        distLabel = @"0.5 miles";
-    }
-    
-    else if (distBetweenStartandVenueFeet > 3168 && distBetweenStartandVenueFeet < 3696 ) {
-        distLabel = @"0.6 miles";
-    }
-    
-    else if (distBetweenStartandVenueFeet > 3696 && distBetweenStartandVenueFeet < 4224 ) {
-        distLabel = @"0.7 miles";
-    }
-    
-    else if (distBetweenStartandVenueFeet > 4224 && distBetweenStartandVenueFeet < 4752) {
-        distLabel = @"0.8 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 4752 && distBetweenStartandVenueFeet < 5016) {
-        distLabel = @"0.9 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 5016 && distBetweenStartandVenueFeet < 5808) {
-        distLabel = @"1 mile";
-    }
-    
-    else if (distBetweenStartandVenueFeet > 5808 && distBetweenStartandVenueFeet < 6336) {
-        distLabel = @"1.1 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 6336 && distBetweenStartandVenueFeet < 6864) {
-        distLabel = @"1.2 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 6864 && distBetweenStartandVenueFeet < 7392) {
-        distLabel = @"1.3 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 7392 && distBetweenStartandVenueFeet < 7920) {
-        distLabel = @"1.4 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 7920 && distBetweenStartandVenueFeet < 8448) {
-        distLabel = @"1.5 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 8448 && distBetweenStartandVenueFeet < 8976) {
-        distLabel = @"1.6 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 8976 && distBetweenStartandVenueFeet < 9504) {
-        distLabel = @"1.7 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 9504 && distBetweenStartandVenueFeet < 10032) {
-        distLabel = @"1.8 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 10032 && distBetweenStartandVenueFeet < 10560) {
-        distLabel = @"1.9 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 10560 && distBetweenStartandVenueFeet < 11088) {
-        distLabel = @"2.0 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 11088 && distBetweenStartandVenueFeet < 11616) {
-        distLabel = @"2.1 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 11616 && distBetweenStartandVenueFeet < 12144) {
-        distLabel = @"2.2 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 12144 && distBetweenStartandVenueFeet < 12672) {
-        distLabel = @"2.3 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 12672 && distBetweenStartandVenueFeet < 13200) {
-        distLabel = @"2.4 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 13200 && distBetweenStartandVenueFeet < 13728) {
-        distLabel = @"2.5 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 13728 && distBetweenStartandVenueFeet < 14256) {
-        distLabel = @"2.6 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 14256 && distBetweenStartandVenueFeet < 14784) {
-        distLabel = @"2.7 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 14784 && distBetweenStartandVenueFeet < 15312) {
-        distLabel = @"2.8 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 15312 && distBetweenStartandVenueFeet < 15840) {
-        distLabel = @"2.9 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 15840 && distBetweenStartandVenueFeet < 16368) {
-        distLabel = @"3.0 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 16368 && distBetweenStartandVenueFeet < 16896) {
-        distLabel = @"3.1 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 16896 && distBetweenStartandVenueFeet < 17424) {
-        distLabel = @"3.2 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 17424 && distBetweenStartandVenueFeet < 17952) {
-        distLabel = @"3.3 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 17952 && distBetweenStartandVenueFeet < 18480) {
-        distLabel = @"3.4 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 18480 && distBetweenStartandVenueFeet < 19008) {
-        distLabel = @"3.5 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 19008 && distBetweenStartandVenueFeet < 19536) {
-        distLabel = @"3.6 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 19536 && distBetweenStartandVenueFeet < 20064) {
-        distLabel = @"3.7 miles";
-    }
-    
-    else if (distBetweenStartandVenueFeet > 20064 && distBetweenStartandVenueFeet < 20592) {
-        distLabel = @"3.8 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 20592 && distBetweenStartandVenueFeet < 21120) {
-        distLabel = @"3.9 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 21120 && distBetweenStartandVenueFeet < 21648) {
-        distLabel = @"4.0 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 21648 && distBetweenStartandVenueFeet < 22176) {
-        distLabel = @"4.1 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 22176 && distBetweenStartandVenueFeet < 22704) {
-        distLabel = @"4.2 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 22704 && distBetweenStartandVenueFeet < 23232) {
-        distLabel = @"4.3 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 23232 && distBetweenStartandVenueFeet < 23760) {
-        distLabel = @"4.4 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 23760 && distBetweenStartandVenueFeet < 24288) {
-        distLabel = @"4.5 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 24288 && distBetweenStartandVenueFeet < 24816) {
-        distLabel = @"4.6 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 24816 && distBetweenStartandVenueFeet < 25344) {
-        distLabel = @"4.7 miles";
-    }
-    
-    else if (distBetweenStartandVenueFeet > 25344 && distBetweenStartandVenueFeet < 25872) {
-        distLabel = @"4.8 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 25872 && distBetweenStartandVenueFeet < 26400) {
-        distLabel = @"4.9 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 26400 && distBetweenStartandVenueFeet < 26928) {
-        distLabel = @"5.0 miles";
-    }
-    else if (distBetweenStartandVenueFeet > 26928 && distBetweenStartandVenueFeet < 100000) {
-        distLabel = @"5+ miles";
-    }
+ 
     
     else
         
@@ -395,10 +249,79 @@
         [self presentViewController:uiActivityViewController animated:YES completion:^{
             //stuff
         }];
+    
+    [self reverseTransformedValue:someText];
+   // NSLog(@"%@", someText)
     }
 
+- (id)reverseTransformedValue:(id)value
+{ NSString *string = (NSString *) value;
+    NSArray  *parts  = [string componentsSeparatedByString: @","];
+    return [[CLLocation alloc] initWithLatitude: [parts[0] doubleValue]
+                                      longitude: [parts[1] doubleValue]];
+}
 
 
+-(void)getTweets
+{
+//    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+//    [params setObject:@"MasterRyuX" forKey:@"screen_name"];
+//    [params setObject:@"10" forKey:@"count"];
+//    [params setObject:@"1" forKey:@"include_entities"];
+//    [params setObject:@"1" forKey:@"include_rts"];
+//    
+//    
+//    NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json"];
+//    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=MasterRyuX"]];
+                                                          
+        NSData *response = [NSURLConnection sendSynchronousRequest:request
+                                                                        returningResponse:nil error:nil];
+                                                          
+                                                          NSError *jsonParsingError = nil;
+                                                          NSArray *publicTimeline = [NSJSONSerialization JSONObjectWithData:response
+                                                                                                                    options:0 error:&jsonParsingError];
+                                                          NSDictionary *tweet;
+                                                          for(int i=0; i<[publicTimeline count];i++)
+    {
+        tweet= [publicTimeline objectAtIndex:i];
+        NSLog(@"last message, %@", tweet);
+        //NSLog(@"Statuses: %@”, [tweet objectForKey:@"text"]);
+    }
+    
+   // + (SLRequest *)requestForServiceType:(NSString *)serviceType requestMethod:(SLRequestMethod)requestMethod URL:(NSURL *)url parameters:(NSDictionary *)parameters;
+    
+//    SLRequest *request = [[SLRequest alloc] initWithURL:url parameters:params requestMethod:SLRequestMethodGET];
+//    
+//    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
+//     {
+//         if (error != nil)
+//         {
+//             //  Inspect the contents of error
+//             exit(-1);
+//         }
+//         else
+//         {
+//             [self fetchJSONData:responseData];
+//         }
+//     }];
+}
+     
+- (void)fetchJSONData:(NSData *)responseData
+    {
+        NSError* error;
+        
+        NSDictionary* jsonResults = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        
+        NSArray *myArrayOfDictionaries = [[jsonResults objectForKey:@"tweets"] objectForKey:@"results"];
+        
+        for (NSDictionary *myDictionary in myArrayOfDictionaries)
+        {
+            // Get title of the image
+            NSString *title = [myDictionary objectForKey:@"title"];
+        }
+
+    }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
