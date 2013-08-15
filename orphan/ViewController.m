@@ -186,9 +186,6 @@
     mateLocation1 = appDelegate.mateLocation;
     
     
-    //NSString *nearPlaceName = thisNearPlace.title;
-    //self.closeSushiLabel.text = nearPlaceName;
-    
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
     // float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
     //
