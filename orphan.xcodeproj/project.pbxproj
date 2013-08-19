@@ -26,6 +26,7 @@
 		DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD43286C1781094700D13992 /* Love-heart-arrow.png */; };
 		DDF5B4D21788B29500EE6352 /* MateLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5B4D11788B29500EE6352 /* MateLocation.m */; };
 		DDF7F3E217B72FBD007541D6 /* archery.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF7F3E117B72FBD007541D6 /* archery.png */; };
+		DDF8C77E17C2DC460030B86D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF8C77D17C2DC460030B86D /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		DDF5B4D01788B29500EE6352 /* MateLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MateLocation.h; sourceTree = "<group>"; };
 		DDF5B4D11788B29500EE6352 /* MateLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MateLocation.m; sourceTree = "<group>"; };
 		DDF7F3E117B72FBD007541D6 /* archery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = archery.png; sourceTree = "<group>"; };
+		DDF8C77D17C2DC460030B86D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF8C77E17C2DC460030B86D /* Accounts.framework in Frameworks */,
 				DD43286B1781057C00D13992 /* Social.framework in Frameworks */,
 				DD4328691781057300D13992 /* Twitter.framework in Frameworks */,
 				DD4328671781055600D13992 /* MapKit.framework in Frameworks */,
@@ -78,6 +81,7 @@
 		DD4328331781051900D13992 = {
 			isa = PBXGroup;
 			children = (
+				DDF8C77D17C2DC460030B86D /* Accounts.framework */,
 				DDF7F3E117B72FBD007541D6 /* archery.png */,
 				DD43286A1781057C00D13992 /* Social.framework */,
 				DD4328681781057300D13992 /* Twitter.framework */,

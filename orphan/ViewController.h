@@ -15,6 +15,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "MateLocation.h"
+#import <Accounts/Accounts.h>
 
 
 @interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
 @property (nonatomic) BOOL headingDidStartUpdating;
+@property (nonatomic) ACAccountStore *accountStore;
 - (IBAction)updateMyLocation:(id)sender;
 - (id)reverseTransformedValue:(id)value;
 

@@ -68,7 +68,6 @@
                 <relationship kind="action" name="updateMyLocation:"/>
                 <relationship kind="outlet" name="heartSpinner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="updateMyLocation" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>
