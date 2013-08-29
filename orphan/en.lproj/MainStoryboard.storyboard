@@ -45,6 +45,21 @@
                                     <action selector="updateMyLocation:" destination="2" eventType="touchUpInside" id="bUR-5p-giO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hrj-W6-aL7">
+                                <rect key="frame" x="-14" y="6" width="121" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="tweet retrieve">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweetRetrieve:" destination="2" eventType="touchUpInside" id="GIL-G0-WsQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
@@ -65,6 +80,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tweetRetrieve:"/>
                 <relationship kind="action" name="updateMyLocation:"/>
                 <relationship kind="outlet" name="heartSpinner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>

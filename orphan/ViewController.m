@@ -238,6 +238,8 @@
     
 //}
 
+
+
 -(IBAction)updateMyLocation:(id)sender{
             NSString *someText = [NSString stringWithFormat:@"%@, %@", self.strLatitude, self.strLongitude];
         NSArray *dataToShare = @[someText] ;
@@ -250,7 +252,7 @@
     
     [self reverseTransformedValue:someText];
    // NSLog(@"%@", someText)
-    [self getTweets];
+    //[self getTweets];
     }
 
 - (id)reverseTransformedValue:(id)value
@@ -258,6 +260,10 @@
     NSArray  *parts  = [string componentsSeparatedByString: @","];
     return [[CLLocation alloc] initWithLatitude: [parts[0] doubleValue]
                                       longitude: [parts[1] doubleValue]];
+}
+
+- (IBAction)tweetRetrieve:(id)sender {
+    [self getTweets];
 }
 
 - (BOOL)userHasAccessToTwitter
@@ -285,7 +291,7 @@
                  [self.accountStore accountsWithAccountType:twitterAccountType];
                  NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
                                @"/1.1/statuses/user_timeline.json"];
-                 NSDictionary *params = @{@"screen_name" : username,
+                 NSDictionary *params = @{@"screen_name" : @"MasterRyuxX",
                                           @"include_rts" : @"0",
                                           @"trim_user" : @"1",
                                           @"count" : @"1"};
@@ -312,6 +318,7 @@
                              
                              if (timelineData) {
                                  NSLog(@"Timeline Response: %@\n", timelineData);
+                                 NSLog(@"something came back");
                              }
                              else {
                                  // Our JSON deserialization went awry
@@ -341,28 +348,28 @@
 //    [params setObject:@"1" forKey:@"include_entities"];
 //    [params setObject:@"1" forKey:@"include_rts"];
 //    
+    self.username = @"MasterRyuxX";
+////    NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json"];
+////    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=MasterryuxX"]];
+//                                                          
+//        NSData *response = [NSURLConnection sendSynchronousRequest:request
+//                                                                        returningResponse:nil error:nil];
+//                                                          
+//                                                          NSError *jsonParsingError = nil;
+//                                                          NSArray *publicTimeline = [NSJSONSerialization JSONObjectWithData:response
+//                                                                                                                    options:0 error:&jsonParsingError];
+//                                                          NSDictionary *tweet;
 //    
-//    NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json"];
+//    {
+//        tweet= [publicTimeline objectAtIndex:0];
+//        NSLog(@"last message, %@", tweet);
+//        //NSLog(@"Statuses: %@”, [tweet objectForKey:@"text"]);
+//    }
 //    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=MasterryuxX"]];
-                                                          
-        NSData *response = [NSURLConnection sendSynchronousRequest:request
-                                                                        returningResponse:nil error:nil];
-                                                          
-                                                          NSError *jsonParsingError = nil;
-                                                          NSArray *publicTimeline = [NSJSONSerialization JSONObjectWithData:response
-                                                                                                                    options:0 error:&jsonParsingError];
-                                                          NSDictionary *tweet;
-    
-    {
-        tweet= [publicTimeline objectAtIndex:0];
-        NSLog(@"last message, %@", tweet);
-        //NSLog(@"Statuses: %@”, [tweet objectForKey:@"text"]);
-    }
-    
    // + (SLRequest *)requestForServiceType:(NSString *)serviceType requestMethod:(SLRequestMethod)requestMethod URL:(NSURL *)url parameters:(NSDictionary *)parameters;
     
-//    SLRequest *request = [[SLRequest alloc] initWithURL:url parameters:params requestMethod:SLRequestMethodGET];
+  //SLRequest *request = [[SLRequest alloc] initWithURL:url parameters:params requestMethod:SLRequestMethodGET];
 //    
 //    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
 //     {
@@ -376,6 +383,78 @@
 //             [self fetchJSONData:responseData];
 //         }
 //     }];
+    
+    
+    {
+        // Request access to the Twitter accounts
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+        ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
+            if (granted) {
+                NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+                // Check if the users has setup at least one Twitter account
+                if (accounts.count > 0)
+                {
+                    ACAccount *twitterAccount = [accounts objectAtIndex:0];
+                    // Creating a request to get the info about a user on Twitter
+                    SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"] parameters:[NSDictionary dictionaryWithObject:self.username forKey:@"screen_name"]];
+                    [twitterInfoRequest setAccount:twitterAccount];
+                    // Making the request
+                    [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            // Check if we reached the reate limit
+                            if ([urlResponse statusCode] == 429) {
+                                NSLog(@"Rate limit reached");
+                                return;
+                            }
+                            // Check if there was an error
+                            if (error) {
+                                NSLog(@"Error: %@", error.localizedDescription);
+                                return;
+                            }
+                            // Check if there is some response data
+                            if (responseData) {
+                                NSError *error = nil;
+                                NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+                                // Filter the preferred data
+                                NSString *screen_name = [(NSDictionary *)TWData objectForKey:@"screen_name"];
+                                NSString *name = [(NSDictionary *)TWData objectForKey:@"name"];
+                                int followers = [[(NSDictionary *)TWData objectForKey:@"followers_count"] integerValue];
+                                int following = [[(NSDictionary *)TWData objectForKey:@"friends_count"] integerValue];
+                                int tweets = [[(NSDictionary *)TWData objectForKey:@"statuses_count"] integerValue];
+                                NSString *profileImageStringURL = [(NSDictionary *)TWData objectForKey:@"profile_image_url_https"];
+                                NSString *bannerImageStringURL =[(NSDictionary *)TWData objectForKey:@"profile_banner_url"];
+                                // Update the interface with the loaded data
+                              //  nameLabel.text = name;
+                                //usernameLabel.text= [NSString stringWithFormat:@"@%@",screen_name];
+                                //tweetsLabel.text = [NSString stringWithFormat:@"%i", tweets];
+//                                followingLabel.text= [NSString stringWithFormat:@"%i", following];
+//                                followersLabel.text = [NSString stringWithFormat:@"%i", followers];
+                                  NSString *lastTweet = [[(NSDictionary *)TWData objectForKey:@"status"] objectForKey:@"text"];
+                                
+                                NSLog(@"last tweet = %@", lastTweet);
+                                //lastTweetTextView.text= lastTweet;
+                                // Get the profile image in the original resolution
+                                profileImageStringURL = [profileImageStringURL stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
+                                //[self getProfileImageForURLString:profileImageStringURL];
+                                // Get the banner image, if the user has one
+                             //   if (bannerImageStringURL) {
+                               //     NSString *bannerURLString = [NSString stringWithFormat:@"%@/mobile_retina", bannerImageStringURL];
+                                 //   [self getBannerImageForURLString:bannerURLString];
+                                //} else {
+                                  //  bannerImageView.backgroundColor = [UIColor underPageBackgroundColor];
+                                //}
+                            }
+                        });
+                    }];
+                }
+            } else {
+                NSLog(@"No access granted");
+            }
+        }];
+    }
+    
+    
 }
      
 - (void)fetchJSONData:(NSData *)responseData
