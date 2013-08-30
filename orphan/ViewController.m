@@ -84,8 +84,11 @@
     self.strLongitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.longitude];
     
     
-    thisDistVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
-    thisDistVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
+  //  thisDistVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
+    //thisDistVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
+    
+    thisDistVenueLat = self.retrievedMateLat;
+    thisDistVenueLong = self.retrievedMateLong;
     //  give latitude2,lang of destination   and latitude,longitude of first place.
     
     //this function return distance in kilometer.
@@ -154,8 +157,11 @@
         self.headingDidStartUpdating = YES;
     }
     
-    thisVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
+   // thisVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
     thisVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
+    
+    thisVenueLat = self.retrievedMateLat;
+    thisVenueLong = self.retrievedMateLong;
     
     float radcurrentLat = degreesToRadians(ourPhoneFloatLat);
     float radcurrentLong = degreesToRadians(ourPhoneFloatLong);
@@ -272,118 +278,11 @@
 }
 
 
-//- (void)fetchTimelineForUser:(NSString *)username
-//{
-//    //  Step 0: Check that the user has local Twitter accounts
-//    if ([self userHasAccessToTwitter]) {
-//        
-//        //  Step 1:  Obtain access to the user's Twitter accounts
-//        twitterAccountType = [self.accountStore
-//                                             accountTypeWithAccountTypeIdentifier:
-//                                             ACAccountTypeIdentifierTwitter];
-//        [self.accountStore
-//         requestAccessToAccountsWithType:twitterAccountType
-//         options:NULL
-//         completion:^(BOOL granted, NSError *error) {
-//             if (granted) {
-//                 //  Step 2:  Create a request
-//                 NSArray *twitterAccounts =
-//                 [self.accountStore accountsWithAccountType:twitterAccountType];
-//                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
-//                               @"/1.1/statuses/user_timeline.json"];
-//                 NSDictionary *params = @{@"screen_name" : @"MasterRyuxX",
-//                                          @"include_rts" : @"0",
-//                                          @"trim_user" : @"1",
-//                                          @"count" : @"1"};
-//                 SLRequest *request =
-//                 [SLRequest requestForServiceType:SLServiceTypeTwitter
-//                                    requestMethod:SLRequestMethodGET
-//                                              URL:url
-//                                       parameters:params];
-//                 
-//                 //  Attach an account to the request
-//                 [request setAccount:[twitterAccounts lastObject]];
-//                 
-//                 //  Step 3:  Execute the request
-//                 [request performRequestWithHandler:^(NSData *responseData,
-//                                                      NSHTTPURLResponse *urlResponse,
-//                                                      NSError *error) {
-//                     if (responseData) {
-//                         if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
-//                             NSError *jsonError;
-//                             NSDictionary *timelineData =
-//                             [NSJSONSerialization
-//                              JSONObjectWithData:responseData
-//                              options:NSJSONReadingAllowFragments error:&jsonError];
-//                             
-//                             if (timelineData) {
-//                                 NSLog(@"Timeline Response: %@\n", timelineData);
-//                                 NSLog(@"something came back");
-//                             }
-//                             else {
-//                                 // Our JSON deserialization went awry
-//                                 NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
-//                             }
-//                         }
-//                         else {
-//                             // The server did not respond successfully... were we rate-limited?
-//                             NSLog(@"The response status code is %d", urlResponse.statusCode);
-//                         }
-//                     }
-//                 }];
-//             }
-//             else {
-//                 // Access was not granted, or an error occurred
-//                 NSLog(@"%@", [error localizedDescription]);
-//             }
-//         }];
-//    }
-//}
 
 -(void)getTweets
 {
-//    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-//    [params setObject:@"MasterRyuX" forKey:@"screen_name"];
-//    [params setObject:@"10" forKey:@"count"];
-//    [params setObject:@"1" forKey:@"include_entities"];
-//    [params setObject:@"1" forKey:@"include_rts"];
-//    
     self.username = @"MasterRyuxX";
-////    NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json"];
-////    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=MasterryuxX"]];
-//                                                          
-//        NSData *response = [NSURLConnection sendSynchronousRequest:request
-//                                                                        returningResponse:nil error:nil];
-//                                                          
-//                                                          NSError *jsonParsingError = nil;
-//                                                          NSArray *publicTimeline = [NSJSONSerialization JSONObjectWithData:response
-//                                                                                                                    options:0 error:&jsonParsingError];
-//                                                          NSDictionary *tweet;
-//    
-//    {
-//        tweet= [publicTimeline objectAtIndex:0];
-//        NSLog(@"last message, %@", tweet);
-//        //NSLog(@"Statuses: %@”, [tweet objectForKey:@"text"]);
-//    }
-//    
-   // + (SLRequest *)requestForServiceType:(NSString *)serviceType requestMethod:(SLRequestMethod)requestMethod URL:(NSURL *)url parameters:(NSDictionary *)parameters;
-    
-  //SLRequest *request = [[SLRequest alloc] initWithURL:url parameters:params requestMethod:SLRequestMethodGET];
-//    
-//    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
-//     {
-//         if (error != nil)
-//         {
-//             //  Inspect the contents of error
-//             exit(-1);
-//         }
-//         else
-//         {
-//             [self fetchJSONData:responseData];
-//         }
-//     }];
-    
+
     
     {
         // Request access to the Twitter accounts
@@ -475,8 +374,14 @@
     float tempfloatLat = [tempStringLat floatValue];
     float tempfloatLong = [tempStringLong floatValue];
     
+    self.retrievedMateLat = tempfloatLat;
+    self.retrievedMateLong = tempfloatLong;
+    
     location = CLLocationCoordinate2DMake(tempfloatLat, tempfloatLong);
-    NSLog(@"here is the converted tweet coordinates: %f, %f",location.latitude, location.longitude);
+    //self.retrievedMateLocation = &(location);
+   NSLog(@"it passed into property %f", self.retrievedMateLat);
+    
+    NSLog(@"here are the converted tweet coordinates: %f, %f",location.latitude, location.longitude);
     
     //location.latitude = [[[NSNumber alloc] initWithFloat:[[locationArray objectAtIndex:0] floatValue]]];
     //location.longitude = [[[NSNumber alloc] initWithFloat:[[locationArray objectAtIndex:1] floatValue]]];

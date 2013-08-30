@@ -24,8 +24,11 @@
 @property (strong, nonatomic) NSString * username;
 @property (strong, nonatomic) NSString * theDistance;
 @property (strong, nonatomic) CLLocation *currentLoc;
+@property CLLocationCoordinate2D * retrievedMateLocation;
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
+@property float retrievedMateLat;
+@property float retrievedMateLong;
 @property (nonatomic) BOOL headingDidStartUpdating;
 @property (nonatomic) ACAccountStore *accountStore;
 - (IBAction)updateMyLocation:(id)sender;
