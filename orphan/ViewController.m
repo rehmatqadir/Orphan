@@ -272,73 +272,73 @@
 }
 
 
-- (void)fetchTimelineForUser:(NSString *)username
-{
-    //  Step 0: Check that the user has local Twitter accounts
-    if ([self userHasAccessToTwitter]) {
-        
-        //  Step 1:  Obtain access to the user's Twitter accounts
-        twitterAccountType = [self.accountStore
-                                             accountTypeWithAccountTypeIdentifier:
-                                             ACAccountTypeIdentifierTwitter];
-        [self.accountStore
-         requestAccessToAccountsWithType:twitterAccountType
-         options:NULL
-         completion:^(BOOL granted, NSError *error) {
-             if (granted) {
-                 //  Step 2:  Create a request
-                 NSArray *twitterAccounts =
-                 [self.accountStore accountsWithAccountType:twitterAccountType];
-                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
-                               @"/1.1/statuses/user_timeline.json"];
-                 NSDictionary *params = @{@"screen_name" : @"MasterRyuxX",
-                                          @"include_rts" : @"0",
-                                          @"trim_user" : @"1",
-                                          @"count" : @"1"};
-                 SLRequest *request =
-                 [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                    requestMethod:SLRequestMethodGET
-                                              URL:url
-                                       parameters:params];
-                 
-                 //  Attach an account to the request
-                 [request setAccount:[twitterAccounts lastObject]];
-                 
-                 //  Step 3:  Execute the request
-                 [request performRequestWithHandler:^(NSData *responseData,
-                                                      NSHTTPURLResponse *urlResponse,
-                                                      NSError *error) {
-                     if (responseData) {
-                         if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
-                             NSError *jsonError;
-                             NSDictionary *timelineData =
-                             [NSJSONSerialization
-                              JSONObjectWithData:responseData
-                              options:NSJSONReadingAllowFragments error:&jsonError];
-                             
-                             if (timelineData) {
-                                 NSLog(@"Timeline Response: %@\n", timelineData);
-                                 NSLog(@"something came back");
-                             }
-                             else {
-                                 // Our JSON deserialization went awry
-                                 NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
-                             }
-                         }
-                         else {
-                             // The server did not respond successfully... were we rate-limited?
-                             NSLog(@"The response status code is %d", urlResponse.statusCode);
-                         }
-                     }
-                 }];
-             }
-             else {
-                 // Access was not granted, or an error occurred
-                 NSLog(@"%@", [error localizedDescription]);
-             }
-         }];
-    }
-}
+//- (void)fetchTimelineForUser:(NSString *)username
+//{
+//    //  Step 0: Check that the user has local Twitter accounts
+//    if ([self userHasAccessToTwitter]) {
+//        
+//        //  Step 1:  Obtain access to the user's Twitter accounts
+//        twitterAccountType = [self.accountStore
+//                                             accountTypeWithAccountTypeIdentifier:
+//                                             ACAccountTypeIdentifierTwitter];
+//        [self.accountStore
+//         requestAccessToAccountsWithType:twitterAccountType
+//         options:NULL
+//         completion:^(BOOL granted, NSError *error) {
+//             if (granted) {
+//                 //  Step 2:  Create a request
+//                 NSArray *twitterAccounts =
+//                 [self.accountStore accountsWithAccountType:twitterAccountType];
+//                 NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
+//                               @"/1.1/statuses/user_timeline.json"];
+//                 NSDictionary *params = @{@"screen_name" : @"MasterRyuxX",
+//                                          @"include_rts" : @"0",
+//                                          @"trim_user" : @"1",
+//                                          @"count" : @"1"};
+//                 SLRequest *request =
+//                 [SLRequest requestForServiceType:SLServiceTypeTwitter
+//                                    requestMethod:SLRequestMethodGET
+//                                              URL:url
+//                                       parameters:params];
+//                 
+//                 //  Attach an account to the request
+//                 [request setAccount:[twitterAccounts lastObject]];
+//                 
+//                 //  Step 3:  Execute the request
+//                 [request performRequestWithHandler:^(NSData *responseData,
+//                                                      NSHTTPURLResponse *urlResponse,
+//                                                      NSError *error) {
+//                     if (responseData) {
+//                         if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
+//                             NSError *jsonError;
+//                             NSDictionary *timelineData =
+//                             [NSJSONSerialization
+//                              JSONObjectWithData:responseData
+//                              options:NSJSONReadingAllowFragments error:&jsonError];
+//                             
+//                             if (timelineData) {
+//                                 NSLog(@"Timeline Response: %@\n", timelineData);
+//                                 NSLog(@"something came back");
+//                             }
+//                             else {
+//                                 // Our JSON deserialization went awry
+//                                 NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
+//                             }
+//                         }
+//                         else {
+//                             // The server did not respond successfully... were we rate-limited?
+//                             NSLog(@"The response status code is %d", urlResponse.statusCode);
+//                         }
+//                     }
+//                 }];
+//             }
+//             else {
+//                 // Access was not granted, or an error occurred
+//                 NSLog(@"%@", [error localizedDescription]);
+//             }
+//         }];
+//    }
+//}
 
 -(void)getTweets
 {
@@ -433,6 +433,7 @@
                                   NSString *lastTweet = [[(NSDictionary *)TWData objectForKey:@"status"] objectForKey:@"text"];
                                 
                                 NSLog(@"last tweet = %@", lastTweet);
+                                [self useLocationString:lastTweet];
                                 //lastTweetTextView.text= lastTweet;
                                 // Get the profile image in the original resolution
                                 profileImageStringURL = [profileImageStringURL stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
@@ -456,22 +457,32 @@
     
     
 }
-     
-- (void)fetchJSONData:(NSData *)responseData
-    {
-        NSError* error;
-        
-        NSDictionary* jsonResults = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-        
-        NSArray *myArrayOfDictionaries = [[jsonResults objectForKey:@"tweets"] objectForKey:@"results"];
-        
-        for (NSDictionary *myDictionary in myArrayOfDictionaries)
-        {
-            // Get title of the image
-            NSString *title = [myDictionary objectForKey:@"title"];
-        }
 
-    }
+
+- (void) useLocationString:(NSString*)loc
+{
+    // the location object that we want to initialize based on the string
+    CLLocationCoordinate2D location;
+    
+    // split the string by comma
+    NSArray * locationArray = [loc componentsSeparatedByString: @","];
+    
+    // set our latitude and longitude based on the two chunks in the string
+    
+    NSString * tempStringLat = [locationArray objectAtIndex:0];
+    NSString * tempStringLong = [locationArray objectAtIndex:1];
+    
+    float tempfloatLat = [tempStringLat floatValue];
+    float tempfloatLong = [tempStringLong floatValue];
+    
+    location = CLLocationCoordinate2DMake(tempfloatLat, tempfloatLong);
+    NSLog(@"here is the converted tweet coordinates: %f, %f",location.latitude, location.longitude);
+    
+    //location.latitude = [[[NSNumber alloc] initWithFloat:[[locationArray objectAtIndex:0] floatValue]]];
+    //location.longitude = [[[NSNumber alloc] initWithFloat:[[locationArray objectAtIndex:1] floatValue]]];
+    
+    // do something with the location
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
