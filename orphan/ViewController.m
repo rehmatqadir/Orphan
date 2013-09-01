@@ -141,6 +141,12 @@
         distLabel = [NSString stringWithFormat:@"%i feet closer", rounding];
        // self.saiImage.alpha = 1;
         //self.sadSushiImage.alpha = 0;
+        
+        if (rounding < 150) {
+            
+            distLabel = [NSString stringWithFormat:@" <150 feet, look up!"];
+            [self turnTorchOn:YES];
+        }
     }
     
     // NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
@@ -389,6 +395,30 @@
     
     // do something with the location
 }
+
+- (void) turnTorchOn: (bool) on {
+    
+    // check if flashlight available
+    Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
+    if (captureDeviceClass != nil) {
+        AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        if ([device hasTorch] && [device hasFlash]){
+            
+            [device lockForConfiguration:nil];
+            if (on) {
+                [device setTorchMode:AVCaptureTorchModeOn];
+                [device setFlashMode:AVCaptureFlashModeOn];
+                //torchIsOn = YES; //define as a variable/property if you need to know status
+            } else {
+                [device setTorchMode:AVCaptureTorchModeOff];
+                [device setFlashMode:AVCaptureFlashModeOff];
+                //torchIsOn = NO;
+            }
+            [device unlockForConfiguration];
+        }
+    } }
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

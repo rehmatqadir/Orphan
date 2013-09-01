@@ -16,6 +16,7 @@
 #import "AppDelegate.h"
 #import "MateLocation.h"
 #import <Accounts/Accounts.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
