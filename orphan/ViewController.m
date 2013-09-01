@@ -90,7 +90,6 @@
     
     thisDistVenueLat = self.retrievedMateLat;
     thisDistVenueLong = self.retrievedMateLong;
-    //  give latitude2,lang of destination   and latitude,longitude of first place.
     
     //this function return distance in kilometer.
     
@@ -109,16 +108,8 @@
     float c = (2 * atan2f(srootA, srootoneMinusA));
     
     float distBetweenStartandVenueMeters = (c * 6371*1000); //radius of earth
-    //    NSLog (@"the distance it's logging in m is %f", distBetweenStartandVenueMeters);
     
     float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters*3.281);
-    //    NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
-    // float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
-    //    NSLog (@"%f", distBetweenStartandVenueKilometers);
-    
-    //float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters/3281);
-    
-    //    NSLog (@"%f", distBetweenStartandVenueFeet);
     self.theDistance = [[NSString alloc] init];
     
     // float distPlaceHolder = [thisNearPlace.distance floatValue];
@@ -139,8 +130,6 @@
         
     {
         distLabel = [NSString stringWithFormat:@"%i feet closer", rounding];
-       // self.saiImage.alpha = 1;
-        //self.sadSushiImage.alpha = 0;
         
         if (rounding < 150) {
             
@@ -156,16 +145,13 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
-    //[self.activityIndicator stopAnimating];
-    //[[UIApplication sharedApplication] endIgnoringInteractionEvents];
-    
     if (!self.headingDidStartUpdating) {
         //[self setupCompassObjectsAndLabels];
         self.headingDidStartUpdating = YES;
     }
     
    // thisVenueLat = [appDelegate.mateLocation.mateLatitude floatValue];
-    thisVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
+   // thisVenueLong = [appDelegate.mateLocation.mateLongitude floatValue];
     
     thisVenueLat = self.retrievedMateLat;
     thisVenueLong = self.retrievedMateLong;
@@ -222,34 +208,12 @@
     //theAnimation.fromValue = [NSNumber numberWithFloat:0];
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
     theAnimation.duration = .8f;
-    //self.closeSushiLabel.text = nearPlaceName;
     self.theDistanceLabel.text = self.theDistance;
     
     [self.heartSpinner.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.heartSpinner.transform = CGAffineTransformMakeRotation(radAngleCalc);
-   // if (![self connected]) {
-     //   self.theDistanceLabel.text = @"No Signal";
-        //self.closeSushiLabel.text = @":(";
-        //        self.saiImage.alpha = 0;
-        //        self.sadSushiImage.alpha = 1;
     }
     
-    //NSNumber *distY = thisNearPlace.distance;
-    
-    // NSLog (@"the distance it's logging in km is %f", distBetweenStartandVenueMeters);
-    
-    //float distPlaceHolder = [thisNearPlace.distance floatValue];
-    //int rounding = (distBetweenStartandVenueMeters);
-    
-    //NSNumber *disttemp = roundf(distPlaceHolder);
-    //    NSString *distLabel = [NSString stringWithFormat:@"%i",rounding];
-    //    NSLog(@"%@", distLabel);
-    //    self.theDistance = distLabel;
-    //
-    //
-    //NSLog(@"true heading is %f", newHeading.trueHeading);
-    
-//}
 
 
 
@@ -325,32 +289,17 @@
                                 // Filter the preferred data
                                 NSString *screen_name = [(NSDictionary *)TWData objectForKey:@"screen_name"];
                                 NSString *name = [(NSDictionary *)TWData objectForKey:@"name"];
-                                int followers = [[(NSDictionary *)TWData objectForKey:@"followers_count"] integerValue];
-                                int following = [[(NSDictionary *)TWData objectForKey:@"friends_count"] integerValue];
-                                int tweets = [[(NSDictionary *)TWData objectForKey:@"statuses_count"] integerValue];
-                                NSString *profileImageStringURL = [(NSDictionary *)TWData objectForKey:@"profile_image_url_https"];
-                                NSString *bannerImageStringURL =[(NSDictionary *)TWData objectForKey:@"profile_banner_url"];
+                             
                                 // Update the interface with the loaded data
                               //  nameLabel.text = name;
                                 //usernameLabel.text= [NSString stringWithFormat:@"@%@",screen_name];
                                 //tweetsLabel.text = [NSString stringWithFormat:@"%i", tweets];
-//                                followingLabel.text= [NSString stringWithFormat:@"%i", following];
-//                                followersLabel.text = [NSString stringWithFormat:@"%i", followers];
                                   NSString *lastTweet = [[(NSDictionary *)TWData objectForKey:@"status"] objectForKey:@"text"];
                                 
                                 NSLog(@"last tweet = %@", lastTweet);
                                 [self useLocationString:lastTweet];
                                 //lastTweetTextView.text= lastTweet;
-                                // Get the profile image in the original resolution
-                                profileImageStringURL = [profileImageStringURL stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
-                                //[self getProfileImageForURLString:profileImageStringURL];
-                                // Get the banner image, if the user has one
-                             //   if (bannerImageStringURL) {
-                               //     NSString *bannerURLString = [NSString stringWithFormat:@"%@/mobile_retina", bannerImageStringURL];
-                                 //   [self getBannerImageForURLString:bannerURLString];
-                                //} else {
-                                  //  bannerImageView.backgroundColor = [UIColor underPageBackgroundColor];
-                                //}
+                              
                             }
                         });
                     }];
