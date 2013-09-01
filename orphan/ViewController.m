@@ -41,6 +41,7 @@
 {
     [super viewDidLoad];
     [self startStandardLocationServices];
+    [self getTweets];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -137,7 +138,7 @@
     else
         
     {
-        distLabel = [NSString stringWithFormat:@"%i feet", rounding];
+        distLabel = [NSString stringWithFormat:@"%i feet closer", rounding];
        // self.saiImage.alpha = 1;
         //self.sadSushiImage.alpha = 0;
     }
@@ -281,7 +282,7 @@
 
 -(void)getTweets
 {
-    self.username = @"MasterRyuxX";
+    self.username = @"monicajackson19";
 
     
     {
