@@ -110,13 +110,24 @@
     float distBetweenStartandVenueMeters = (c * 6371*1000); //radius of earth
     
     float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters*3.281);
+    int distBetweenStartandVenueMiles = (distBetweenStartandVenueFeet/5280);
     self.theDistance = [[NSString alloc] init];
     
     // float distPlaceHolder = [thisNearPlace.distance floatValue];
     int rounding = (distBetweenStartandVenueFeet);
+    if (distBetweenStartandVenueFeet > 5280)
+    {
+    rounding = distBetweenStartandVenueMiles;
+    }
+    else
+    {
+        rounding = distBetweenStartandVenueFeet;
+    };
+    
     NSString *distLabel = [[NSString alloc] init];
-    if (distBetweenStartandVenueFeet > 10000) {
-        distLabel = [NSString stringWithFormat:@"Calculating..."];
+    if (distBetweenStartandVenueFeet > 5280) {
+        //distLabel = [NSString stringWithFormat:@"Calculating..."];
+        distLabel = [NSString stringWithFormat:@"%i miles closer", rounding];
         
     }
     
@@ -193,11 +204,11 @@
     //float managerheadRad = manager.heading.trueHeading * M_PI/180.0f;
     //float newHeadingRad = newHeading.trueHeading * M_PI /180.0f;
     float angleCalc;
-    if (newHeading.trueHeading > VenueBearDeg)
-    {angleCalc = -(newHeading.trueHeading - VenueBearDeg);
+    if (newHeading.magneticHeading > VenueBearDeg)
+    {angleCalc = -(newHeading.magneticHeading - VenueBearDeg);
     }
     else
-    {angleCalc = VenueBearDeg - newHeading.trueHeading;
+    {angleCalc = VenueBearDeg - newHeading.magneticHeading;
     }
     //float angleCalc = (VenueBearDeg - newHeading.magneticHeading);
     
@@ -252,7 +263,7 @@
 
 -(void)getTweets
 {
-    self.username = @"monicajackson19";
+    self.username = @"MasterRyuXX";
 
     
     {
@@ -312,7 +323,6 @@
     
     
 }
-
 
 - (void) useLocationString:(NSString*)loc
 {

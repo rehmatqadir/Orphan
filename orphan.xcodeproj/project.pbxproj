@@ -24,6 +24,10 @@
 		DD4328691781057300D13992 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328681781057300D13992 /* Twitter.framework */; };
 		DD43286B1781057C00D13992 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD43286A1781057C00D13992 /* Social.framework */; };
 		DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD43286C1781094700D13992 /* Love-heart-arrow.png */; };
+		DD57D1C017D8B66D00DC0931 /* sketcharrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1BF17D8B66D00DC0931 /* sketcharrow.png */; };
+		DD57D1C217D8B67A00DC0931 /* diag114.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1C117D8B67A00DC0931 /* diag114.png */; };
+		DD57D1C517D8B74D00DC0931 /* diag57.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1C317D8B74D00DC0931 /* diag57.png */; };
+		DD57D1C617D8B74D00DC0931 /* sketch57.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1C417D8B74D00DC0931 /* sketch57.png */; };
 		DDB2ABAA17D0041C00F11179 /* binoculars.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB2ABA917D0041C00F11179 /* binoculars.png */; };
 		DDB2ABAC17D2EA3D00F11179 /* rotated-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB2ABAB17D2EA3C00F11179 /* rotated-heart-arrow.png */; };
 		DDB2ABAE17D3239B00F11179 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB2ABAD17D3239B00F11179 /* AVFoundation.framework */; };
@@ -55,6 +59,10 @@
 		DD4328681781057300D13992 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		DD43286A1781057C00D13992 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DD43286C1781094700D13992 /* Love-heart-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-heart-arrow.png"; sourceTree = "<group>"; };
+		DD57D1BF17D8B66D00DC0931 /* sketcharrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sketcharrow.png; sourceTree = "<group>"; };
+		DD57D1C117D8B67A00DC0931 /* diag114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diag114.png; sourceTree = "<group>"; };
+		DD57D1C317D8B74D00DC0931 /* diag57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diag57.png; sourceTree = "<group>"; };
+		DD57D1C417D8B74D00DC0931 /* sketch57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sketch57.png; sourceTree = "<group>"; };
 		DDB2ABA917D0041C00F11179 /* binoculars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binoculars.png; sourceTree = "<group>"; };
 		DDB2ABAB17D2EA3C00F11179 /* rotated-heart-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rotated-heart-arrow.png"; sourceTree = "<group>"; };
 		DDB2ABAD17D3239B00F11179 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +96,10 @@
 		DD4328331781051900D13992 = {
 			isa = PBXGroup;
 			children = (
+				DD57D1C317D8B74D00DC0931 /* diag57.png */,
+				DD57D1C417D8B74D00DC0931 /* sketch57.png */,
+				DD57D1C117D8B67A00DC0931 /* diag114.png */,
+				DD57D1BF17D8B66D00DC0931 /* sketcharrow.png */,
 				DDB2ABAD17D3239B00F11179 /* AVFoundation.framework */,
 				DDF8C77D17C2DC460030B86D /* Accounts.framework */,
 				DDF7F3E117B72FBD007541D6 /* archery.png */,
@@ -212,6 +224,10 @@
 				DDF7F3E217B72FBD007541D6 /* archery.png in Resources */,
 				DDB2ABAA17D0041C00F11179 /* binoculars.png in Resources */,
 				DDB2ABAC17D2EA3D00F11179 /* rotated-heart-arrow.png in Resources */,
+				DD57D1C017D8B66D00DC0931 /* sketcharrow.png in Resources */,
+				DD57D1C217D8B67A00DC0931 /* diag114.png in Resources */,
+				DD57D1C517D8B74D00DC0931 /* diag57.png in Resources */,
+				DD57D1C617D8B74D00DC0931 /* sketch57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
