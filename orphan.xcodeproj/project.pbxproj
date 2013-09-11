@@ -24,6 +24,7 @@
 		DD4328691781057300D13992 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4328681781057300D13992 /* Twitter.framework */; };
 		DD43286B1781057C00D13992 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD43286A1781057C00D13992 /* Social.framework */; };
 		DD43286D1781094700D13992 /* Love-heart-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD43286C1781094700D13992 /* Love-heart-arrow.png */; };
+		DD50AE9417DFE4D60035A43A /* binoculars600dpi.png in Resources */ = {isa = PBXBuildFile; fileRef = DD50AE9317DFE4D60035A43A /* binoculars600dpi.png */; };
 		DD57D1C017D8B66D00DC0931 /* sketcharrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1BF17D8B66D00DC0931 /* sketcharrow.png */; };
 		DD57D1C217D8B67A00DC0931 /* diag114.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1C117D8B67A00DC0931 /* diag114.png */; };
 		DD57D1C517D8B74D00DC0931 /* diag57.png in Resources */ = {isa = PBXBuildFile; fileRef = DD57D1C317D8B74D00DC0931 /* diag57.png */; };
@@ -59,6 +60,7 @@
 		DD4328681781057300D13992 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		DD43286A1781057C00D13992 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DD43286C1781094700D13992 /* Love-heart-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-heart-arrow.png"; sourceTree = "<group>"; };
+		DD50AE9317DFE4D60035A43A /* binoculars600dpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binoculars600dpi.png; sourceTree = "<group>"; };
 		DD57D1BF17D8B66D00DC0931 /* sketcharrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sketcharrow.png; sourceTree = "<group>"; };
 		DD57D1C117D8B67A00DC0931 /* diag114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diag114.png; sourceTree = "<group>"; };
 		DD57D1C317D8B74D00DC0931 /* diag57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diag57.png; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				DD43284E1781051900D13992 /* AppDelegate.h */,
 				DD43284F1781051900D13992 /* AppDelegate.m */,
 				DD4328571781051900D13992 /* MainStoryboard.storyboard */,
+				DD50AE9317DFE4D60035A43A /* binoculars600dpi.png */,
 				DD43286C1781094700D13992 /* Love-heart-arrow.png */,
 				DD43285A1781051900D13992 /* ViewController.h */,
 				DD43285B1781051900D13992 /* ViewController.m */,
@@ -228,6 +231,7 @@
 				DD57D1C217D8B67A00DC0931 /* diag114.png in Resources */,
 				DD57D1C517D8B74D00DC0931 /* diag57.png in Resources */,
 				DD57D1C617D8B74D00DC0931 /* sketch57.png in Resources */,
+				DD50AE9417DFE4D60035A43A /* binoculars600dpi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
